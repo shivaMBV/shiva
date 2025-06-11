@@ -1,0 +1,14 @@
+{
+  "clientDetails": {
+    "env": "dev",
+    "pin": "111111",
+    "company": "striker",
+    "email": "cxapp123+striker@gmail.com"
+  },
+  "toast": {
+    "expectedMessages": [
+      "PIN generated successfully.",
+      "Sign up done successfully."
+    ]
+  }
+}

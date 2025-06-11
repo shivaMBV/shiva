@@ -1,0 +1,59 @@
+{
+  "clientonboard": {
+    "builderTitle": "builder constructions",
+    "builderDesc": "builder refers to a person or company whose job is to construct or repair buildings and other structures."
+  },
+  "ProjectDetails": {
+    "projectDescription": "This is the mostly used project in the world",
+    "projectName": "Aluminium Tower",
+    "projectsType": [
+      "Commercial",
+      "Residential"
+    ],
+    "SelectedProjectType": "COMMERCIAL"
+  },
+  "PLP_Configuration": {
+    "basicDetails": {
+      "location": "",
+      "keyPoints": {
+        "point1": "Fixed montly Incomes",
+        "point2": "High yield returns",
+        "point3": "Net yield returns"
+      },
+      "parameter1": "Avg. Gross Yield",
+      "value1": "10.4%",
+      "parameter2": "Avg. Net Yield",
+      "value2": "9.3%",
+      "progressBar": {
+        "totalAmount": "150",
+        "completed": ""
+      },
+      "specifications": {
+        "parameter1": "",
+        "data1": "",
+        "parameter2": "",
+        "data2": "",
+        "parameter3": "",
+        "data3": ""
+      },
+      "cardDetails": {
+        "assetType": "Land",
+        "assetValue": "",
+        "asserArea": ""
+      },
+      "reeraNumber": "",
+      "termsAndCondition": "The property shall be sold/purchased in its existing condition unless otherwise specified."
+    },
+    "overview": {
+      "overviewText": "This is an opportunity to invest in 70,447 sqft of Golden Tower; a Grade-A Office asset located at survey No 18/18/17/18/12 Rupena Agrahara Village, Begur Hobli, Bommannahalli, Bengaluru 560068. The opportunity is valued at Rs. 106 Crs and the tenant is an international brand advancing the future of health through impactful technology solutions.",
+      "assetOverview": "This is a commercial building with 6 storeys of Grade A office space. The property has been built to global standards, meeting all the requirements of a Grade A asset. The opportunity is to invest in all the floors of the Office Space  totaling 70,447 sqft + 85 car parks. ",
+      "assetFeature": "The opportunity is to invest in all the floors of the Office Space of single floor of approximately 30,000 sqft with ample parking.",
+      "aboutLocation": "Situated on Hosur Road, this asset boasts outstanding connectivity. Enhanced by major road arteries, the upcoming Bommanahalli metro station, it ensures seamless access to diverse locales within Bengaluru. Hosur Road, also known as National Highway -NH44, is a major road that connects Bengaluru, Karnataka and Hosur Tamil Nadu."
+    }
+  },
+  "scheduleCallDetails" : {
+      "startTime" : "10:00",  
+      "endTime" : "18:00",
+      "duration" : "30"
+    }
+}
