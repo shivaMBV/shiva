@@ -137,7 +137,11 @@ static async uploadFile(page, fileSelector, fileInput, filePath, __filename , se
   if(fileSelector!= null){
     await fileSelector.click();
   }
-  const Dir = path.join(__dirname, `../../Files/${filePath}`);
+  const fileArray = Array.isArray(filePath) ? filePath : [filePath];
+  const Dir = fileArray.map(file =>
+    path.join(__dirname, `../../Files/${file}`)
+  );
+
   await fileInput.waitFor({stable : "visible"});
   await fileInput.setInputFiles(Dir);
   await page.waitForTimeout(3000);

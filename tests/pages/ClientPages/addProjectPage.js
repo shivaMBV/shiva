@@ -20,7 +20,7 @@ export class addProject{
         this.dd_projectType = page.getByPlaceholder("Select project type");  
         this.dd_productType = page.getByPlaceholder("Select product type");
         this.btn_save = page.getByRole("button", { name : "Save project" });
-        this.successMSG = page.locator("span", { hasText: "Project has been added succesfully" });
+        this.successMSG = page.locator("span", {hasText:"Project has been added succesfully"});
         this.PN = page.locator("[id='7btv2nxUjRr4bVSdpu2emv'] div ~ div");
         this.ProType = page.locator("[id='2Z6djt20rSxhRvz1iZH2SF'] div ~div");
         this.btn_config = page.locator(`//div[@title='${plplData.ProjectDetails.projectName}']/ancestor::div[@id='6H8un7JWqBkcfjTNN26Wu8']/following-sibling::div/button[1]`);
@@ -72,9 +72,9 @@ export class addProject{
 
     async saveProject(){
         await this.btn_save.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(1500);
         const actualMSG = await this.successMSG;
-        await expect(actualMSG).toHaveText("Project has been added succesfully");
+        await expect(actualMSG).toHaveText("Project has been added successfully");
     }
 
     async saveProject_NAMEandTYPE_inJSON(ProjectName,ProType){

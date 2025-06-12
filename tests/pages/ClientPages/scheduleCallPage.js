@@ -52,5 +52,4 @@ export class ScheduleCallPage {
         await this.save.click();
         await methods.validateText(this.page, "Schedule Call Configuration details Updated Successfully");
     }
-
 }

@@ -13,6 +13,8 @@ import { Plp_documentPage } from "../pages/ClientPages/Plp_documentPage.js";
 import { Plp_galleryPage } from "../pages/ClientPages/Plp_galleryPage.js";
 import { contactManagerPage } from "../pages/ClientPages/contactManagerPage.js";
 import { ScheduleCallPage } from "../pages/ClientPages/scheduleCallPage.js";
+import { inventorymanagement } from "../pages/ClientPages/inventorymanagementPage.js";
+import { uploadConfiguration } from "../pages/ClientPages/uploadConfiguration.js";
 
 export class PageObjectManager {
 
@@ -33,7 +35,8 @@ export class PageObjectManager {
     this.gallery = new Plp_galleryPage(this.page);
     this.contact = new contactManagerPage(this.page);
     this.schedule = new ScheduleCallPage(this.page);
-
+    this.inventory = new inventorymanagement(this.page);
+    this.uploadConfig = new uploadConfiguration(this.page);
     }
 
     getLoginPage(){
@@ -80,6 +83,12 @@ export class PageObjectManager {
     }
     getScheduleCall(){
         return this.schedule;
+    }
+    getInventoryManagement(){
+        return this.inventory;
+    }
+    getUploadConfig(){
+        return this.uploadConfig;
     }
 
 

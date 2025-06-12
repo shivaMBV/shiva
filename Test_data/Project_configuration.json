@@ -55,5 +55,25 @@
       "startTime" : "10:00",  
       "endTime" : "18:00",
       "duration" : "30"
+    },
+    "inventoryManagement" :{
+      "totalAvailableArea" : "676567",
+      "amountPerSqFt" : "5789",
+      "minimumAmount" : "3000000"
+    },
+    "uploadDocuments" :{
+      "agreements" : [
+        "docs/bank stmt.pdf",
+        "docs/Driving license.pdf",
+        "docs/dummy Pan.pdf",
+        "docs/pdf.pdf"
+      ],
+      "legal" : [
+        "docs/Dummy Aadhar.pdf",
+        "docs/Board.Resolution-pdf.pdf",
+        "docs/passport.pdf",
+        "docs/Signed.pdf.pdf"
+      ]
     }
+
 }
