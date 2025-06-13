@@ -5,6 +5,9 @@
     "company": "striker",
     "email": "cxapp123+striker@gmail.com"
   },
+  "customerDetails": {
+    "email": "darryl.orn@example.org"
+  },
   "toast": {
     "expectedMessages": [
       "PIN generated successfully.",

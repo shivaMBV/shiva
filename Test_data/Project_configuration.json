@@ -5,12 +5,12 @@
   },
   "ProjectDetails": {
     "projectDescription": "This is the mostly used project in the world",
-    "projectName": "Aluminium Tower",
+    "projectName": "Rameshwaram",
     "projectsType": [
       "Commercial",
       "Residential"
     ],
-    "SelectedProjectType": "COMMERCIAL"
+    "SelectedProjectType": "Residential"
   },
   "PLP_Configuration": {
     "basicDetails": {
