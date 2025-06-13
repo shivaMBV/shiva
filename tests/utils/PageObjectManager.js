@@ -1,5 +1,4 @@
 import { LoginPage } from "../pages/ClientPages/LoginPage.js";
-import { SignUpPage } from "../pages/CustomerPages/SignUpPage.js";
 import { ClientSignUpPage } from "../pages/ClientPages/ClientSignUpPage.js";
 import { ClientOnBoardingPage } from "../pages/ClientPages/ClientOnBoardingPage.js";
 import { ClientDashboard } from "../pages/ClientPages/ClientDashboardPage.js";
@@ -15,13 +14,16 @@ import { contactManagerPage } from "../pages/ClientPages/contactManagerPage.js";
 import { ScheduleCallPage } from "../pages/ClientPages/scheduleCallPage.js";
 import { inventorymanagement } from "../pages/ClientPages/inventorymanagementPage.js";
 import { uploadConfiguration } from "../pages/ClientPages/uploadConfiguration.js";
+import { CustomerSignUpPage } from "../pages/CustomerPages/CustomerSignUpPage.js";
+import { customerShell_DashboardPage } from "../pages/CustomerPages/customerShell_DashboardPage.js";
+import { PropertiesPage } from "../pages/CustomerPages/PropertiesPage.js";
 
 export class PageObjectManager {
 
     constructor(page){
     this.page = page;
     this.login = new LoginPage(this.page);
-    this.customer_signup = new SignUpPage(this.page);
+    this.customer_signup = new CustomerSignUpPage(this.page);
     this.client_signup = new ClientSignUpPage(this.page);
     this.clientOnBoard  = new ClientOnBoardingPage(this.page);
     this.clientDash = new ClientDashboard(this.page);
@@ -37,7 +39,10 @@ export class PageObjectManager {
     this.schedule = new ScheduleCallPage(this.page);
     this.inventory = new inventorymanagement(this.page);
     this.uploadConfig = new uploadConfiguration(this.page);
-    }
+    this.customDash = new customerShell_DashboardPage(this.page);
+    this.properties = new PropertiesPage(this.page);
+
+}
 
     getLoginPage(){
         return this.login;
@@ -90,7 +95,10 @@ export class PageObjectManager {
     getUploadConfig(){
         return this.uploadConfig;
     }
-
-
-
+    getCustomerDashboard(){
+        return this.customDash;
+    }
+    getProperties(){
+        return this.properties;
+    }
 }

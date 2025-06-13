@@ -1,7 +1,7 @@
 import { page,expect } from "@playwright/test";
 import fs from "fs";
 import path from "path";
-import data from "../../Test_data/userDetails.json";
+import userData from "../../Test_data/userDetails.json";
 import { faker } from "@faker-js/faker";
 import { ClientOnBoardingPage } from "../pages/ClientPages/ClientOnBoardingPage";
 import { TIMEOUT } from "dns";
@@ -76,7 +76,7 @@ static async validateText(page, text){
 //validating Toast messages
 static async toastMessage(page,text){
   const expectedMSG = await page.locator("div[class='_msgString']").textContent();
-  await expect(expectedMSG).toEqual(text);
+  expect(expectedMSG).toEqual(text);
 }
 
 // Generate e random email
@@ -86,7 +86,8 @@ static async generateEmail(){
   const lastName = faker.person.lastName();
   const domain = faker.helpers.arrayElement(customDomains);
   const email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@${domain}`;
-  return email;
+  return {email,firstName,lastName};
+  
 }
 
 static async generateLocation(){
@@ -123,13 +124,14 @@ static async fakerData(){
     RandomAlpha : faker.string.alpha(10),
     alphaNumeric : faker.string.alphanumeric(15),
     sentance : faker.lorem.sentence(),
-    lastName : faker.person.lastName()
+    lastName : faker.person.lastName(),
+    firstName : faker.person.firstName()
   }
 }
 
 // url
 static async getClientUrl(company,pathParameter) {
-  return `https://${company}.${data.clientDetails.env}.modlix.com/${pathParameter}`;
+  return `https://${company}.${userData.clientDetails.env}.modlix.com/${pathParameter}`;
 }
 
 // upload file function
@@ -190,7 +192,7 @@ if (await img.count() > i) {
       // Wait for image to appear
       await expect(container.locator('img[alt="Selected file"]')).toBeVisible();
       continue;
-  }
+    }
   }        
 }
 }
