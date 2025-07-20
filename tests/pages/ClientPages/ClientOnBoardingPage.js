@@ -66,6 +66,9 @@ export class ClientOnBoardingPage {
         await this.next.click();
         // await expect(this.text(onboard.clientonboard.builderTitle)).toBeTruthy();
         // await expect(this.text(onboard.clientonboard.builderDesc)).toBeTruthy();
+    }
+
+    async saveOnBoard(){
         await this.save.click();
         await expect(this.page.locator("[id='2SWdgORWhq3sH4jEaaambv'] div h1")).toHaveText("Ready to Build Something Amazing? Add Your Project Here!");
     }

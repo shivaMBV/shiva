@@ -1,5 +1,6 @@
 import { methods } from "../../utils/methods";
 import { ClientOnBoardingPage } from "./ClientOnBoardingPage";
+import plpData from "../../../Test_data/Project_configuration.json"
 
 export class contactManagerPage{
     constructor(page){
@@ -13,24 +14,27 @@ export class contactManagerPage{
         this.btn_save = page.getByRole("button",{name : "Save & Continue"});
     }
 
-    async enterName(){
-        await this.page.waitForTimeout(1000);
-        await this.name.fill((await methods.fakerData()).lastName);
+    async managerName(){
+        const {firstName,lastName,email} = await methods.generateEmail();
+        const NAME = await methods.getValueOrFallback(plpData.contactManager.name,firstName);
+        await methods.fillData(this.name,NAME);
     }
 
-    async enterEmail(){
-        await this.page.waitForTimeout(1000);
-        const email = await methods.generateEmail();
-        await methods.fillData(this.in_email,email);   
+    async managerEmail(){
+        const {firstName,lastName,email} = await methods.generateEmail();
+        const EMAIL = await methods.getValueOrFallback(plpData.contactManager.emailID,email);
+        await methods.fillData(this.in_email,EMAIL);
     }
 
-    async enterPhone(){
+    async managerPhone(){
         const phone = (await methods.fakerData()).phone;
-        await this.phone.fill(phone);
+        const PHONE = await methods.getValueOrFallback(plpData.contactManager.phoneNumber,phone);
+        await methods.fillData(this.phone,PHONE);
     }
+
 
     async uploadImage(){
-        await methods.uploadFile(this.page, this.img, this.on._fileInput, "images/images.jpg", "images.jpg", this.on._select);
+        await methods.uploadFile(this.page, this.img, this.on._fileInput, "images/profile.jpg", "profile.jpg", this.on._select);
     }
 
     async onSaving(){

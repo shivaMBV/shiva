@@ -20,11 +20,11 @@ export class addProject{
         this.dd_projectType = page.getByPlaceholder("Select project type");  
         this.dd_productType = page.getByPlaceholder("Select product type");
         this.btn_save = page.getByRole("button", { name : "Save project" });
-        this.successMSG = page.locator("span", {hasText:"Project has been added succesfully"});
+        this.successMSG = page.locator("span", {hasText:"Project has been added successfully"});
         this.PN = page.locator("[id='7btv2nxUjRr4bVSdpu2emv'] div ~ div");
         this.ProType = page.locator("[id='2Z6djt20rSxhRvz1iZH2SF'] div ~div");
         this.btn_config = page.locator(`//div[@title='${plplData.ProjectDetails.projectName}']/ancestor::div[@id='6H8un7JWqBkcfjTNN26Wu8']/following-sibling::div/button[1]`);
-        this.btn_viewDetails =  page.locator(`//div[@title='${plplData.ProjectDetails.projectName}']/ancestor::div[@id='6H8un7JWqBkcfjTNN26Wu8']/following-sibling::div/button[2]`);
+        this.btn_viewDetails =  page.locator(`//div[@title='${plplData.ProjectDetails.projectName}']/ancestor::div[@id='6H8un7JWqBkcfjTNN26Wu8']/following-sibling::div/button[1]`);
         this.errorMSG = page.locator("//div[@class='_msgStringContainer']/div");
     }
 
@@ -34,7 +34,7 @@ export class addProject{
         await methods.waitFor_and_Click(await manager.getClientDashboard().btn_addProject);
     }
     async verifyAddprojectURL(){
-        const expectedURL = await methods.getClientUrl(userData.clientDetails.company,"addProject");
+        const expectedURL = await methods.getClientUrl(userData.clientDetails.domain,"addProject");
         await this.page.waitForURL(expectedURL);
         const actualURL = await this.page.url();
         expect(actualURL).toEqual(expectedURL);
@@ -55,7 +55,8 @@ export class addProject{
 
     async addProjectDetails(){
         const ProjectName = await methods.generateProjectName();
-        await methods.fillData(this.txt_projectName, ProjectName);
+        const Project_Name = await methods.getValueOrFallback(plplData.ProjectDetails.projectName, ProjectName);
+        await methods.fillData(this.txt_projectName, Project_Name);
 
         const ProType = faker.helpers.arrayElement(plplData.ProjectDetails.projectsType);
         await methods.selectDropdownOption(this.page, this.dd_projectType, ProType);
@@ -67,7 +68,7 @@ export class addProject{
             await methods.selectDropdownOption(this.page, this.dd_productType , "Apartments");
             await this.saveProject();
         }
-        return {ProjectName, ProType};
+        return {Project_Name, ProType};
     }
 
     async saveProject(){
@@ -77,15 +78,15 @@ export class addProject{
         await expect(actualMSG).toHaveText("Project has been added successfully");
     }
 
-    async saveProject_NAMEandTYPE_inJSON(ProjectName,ProType){
+    async saveProject_NAMEandTYPE_inJSON(Project_Name,ProType){
         const Project_configuration = JSON.parse(fs.readFileSync(Project_configPath, "utf-8"));
-        Project_configuration.ProjectDetails.projectName = ProjectName;
+        Project_configuration.ProjectDetails.projectName = Project_Name;
         Project_configuration.ProjectDetails.SelectedProjectType = ProType;
         fs.writeFileSync(Project_configPath, JSON.stringify(Project_configuration, null, 2), "utf-8");
-        await console.log("Project Name :" +ProjectName,", Project Type : "+ ProType);
+        console.log("Project Name :" +Project_Name,", Project Type : "+ ProType);
     }
 
-    async verifyProjectOnDashboard(ProjectName,ProType){
+    async verifyProjectOnDashboard(Project_Name,ProType){
         await this.page.waitForTimeout(2000);
         const PNcount = await this.PN.count(); 
         const ProTypeCount = await this.ProType.count();
@@ -93,7 +94,7 @@ export class addProject{
         for(let i=0; i<PNcount; i++){
             const PN_actual = await this.PN.nth(i).getAttribute("title");
             const ProType_actual = await this.ProType.nth(i).getAttribute("title");
-            if (PN_actual === ProjectName && ProType_actual === ProType) {
+            if (PN_actual === Project_Name && ProType_actual === ProType) {
                 matchFound = true;
                 console.log("is project is created : " +matchFound);
                 break;

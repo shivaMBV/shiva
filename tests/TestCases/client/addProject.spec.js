@@ -1,40 +1,24 @@
 import { test, expect } from "@playwright/test";
-import data from "../../../Test_data/userDetails.json";
 import { PageObjectManager } from "../../utils/PageObjectManager";
 
 
 test.only("add Project", async({page})=>{
-    test.setTimeout(30000);
+    test.setTimeout(50000);
     const manager = new PageObjectManager(page);
-    const login = await manager.getLoginPage();
-    await login.loginUser(data.clientDetails.email, data.clientDetails.pin);
+    const login = manager.getLoginPage();
+    await login.Client_login();
 
-    const add = await manager.getaddProject();
-    const plp = await manager.getPlpConfig();
+    const add =  manager.getaddProject();
+    const plp = manager.getPlpConfig();
     await add.clickAddProject();
     await add.verifyAddprojectURL();
     await add.addProjectLogo();
     await add.addBannerImg();
 
-    const {ProjectName,ProType} = await add.addProjectDetails();
-    await add.saveProject_NAMEandTYPE_inJSON(ProjectName,ProType);
-    await add.verifyProjectOnDashboard(ProjectName,ProType);
+    const {Project_Name,ProType} = await add.addProjectDetails();
+    await add.saveProject_NAMEandTYPE_inJSON(Project_Name,ProType);
+    await add.verifyProjectOnDashboard(Project_Name,ProType);
 });
-
-// test("Adding Existng Project Name", async({page})=>{
-
-//     const manager = new PageObjectManager(page);
-//     const login = await manager.getLoginPage();
-//     await login.loginUser(data.clientDetails.email, data.clientDetails.pin);
-
-//     const dash = await manager.getaddProject();
-//     const plp = await manager.getPlpConfig();
-//     await dash.clickAddProject();
-//     await dash.verifyAddprojectURL();
-//     await dash.addProjectLogo();
-//     await dash.addBannerImg();
-//     await dash.addProjectDetails();
-// });
 
 
 

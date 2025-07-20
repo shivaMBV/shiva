@@ -1,0 +1,47 @@
+{
+    "AuthorizePerson" : {
+        "firstName": ["Durga","karthik","sathya","ajay","santosh","bhavani"],
+        "lastName" : "K",
+        "phoneNumber" : "",
+        "emailID" : "",
+        "DOB" : "14/04/1988",
+        "gender" : ["Male","Female"]
+    },
+    "Address": {
+        "cummunicaitonAddress" : {
+            "fullAddress" : "",
+            "country" : "",
+            "pincode" : ["400001", "560001", "600001", "700001", "800001"]
+        },
+        "permanentAddress" : {
+            "fullAddress" : "",
+            "country" : "",
+            "pincode" : "",
+            "documentType" : ["Aadhar","Drivinglicense","Passport","Voterid","Electricitybill","Gasbill"],
+            "documentNumber" : "8765 8604 5980"
+        }  
+    },
+    "panDetails" : {
+        "panNumber" : "ASDFG1234H",
+        "officeName" : "",
+        "dateOfIncorporation" : "14/04/2010"
+    },
+    "bankDetails" : {
+        "accountType" : ["Savings","Current"],
+        "isfc" : "SBIN0000123",
+        "accountNumber" : "098767987634",
+        "bankName" : "SBIN"
+    },
+    "officeAddress" : {
+        "fullAddress" : "",
+        "country" : "",
+        "pincode" : "",
+        "landmark": "near railway station"
+    },
+    "permanentAddress" : {
+        "fullAddress" : "",
+        "country" : "",
+        "pincode" : "",
+        "landmark": ""
+    }
+}

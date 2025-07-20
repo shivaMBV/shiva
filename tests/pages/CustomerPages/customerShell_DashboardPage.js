@@ -57,6 +57,6 @@ export class customerShell_DashboardPage{
     }
 
     async verify_dashboard(){
-        await methods.validateText(this.page, "You have no project here");
+        return await methods.validateText(this.page, "You have no project here");
     }
 }

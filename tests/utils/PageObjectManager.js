@@ -14,9 +14,22 @@ import { contactManagerPage } from "../pages/ClientPages/contactManagerPage.js";
 import { ScheduleCallPage } from "../pages/ClientPages/scheduleCallPage.js";
 import { inventorymanagement } from "../pages/ClientPages/inventorymanagementPage.js";
 import { uploadConfiguration } from "../pages/ClientPages/uploadConfiguration.js";
+import { inventorySetupPage } from "../pages/ClientPages/inventorySetupPage.js";
+
 import { CustomerSignUpPage } from "../pages/CustomerPages/CustomerSignUpPage.js";
 import { customerShell_DashboardPage } from "../pages/CustomerPages/customerShell_DashboardPage.js";
 import { PropertiesPage } from "../pages/CustomerPages/PropertiesPage.js";
+import { ManageAccountsPage } from "../pages/CustomerPages/manageAccountsPage.js";
+import { kycBentogridsPage } from "../pages/CustomerPages/kycBentogridsPage.js";
+import { authorizePerson } from "../pages/CustomerPages/other_kycs/authorizePerson.js";
+import { authorizePersonAddress } from "../pages/CustomerPages/other_kycs/authorizePersonAddress.js";
+import { bankDetails } from "../pages/CustomerPages/other_kycs/bankDetails.js";
+import { companyAddress } from "../pages/CustomerPages/other_kycs/companyAddress.js";
+
+import { kyc_personalDetailsPage } from "../pages/CustomerPages/KYC Individual/kyc_personalDetailsPage.js";
+import { kyc_professionalDetailsPage } from "../pages/CustomerPages/KYC Individual/kyc_professionalDetails.js"
+import { kyc_pan_bankDetailsPage } from "../pages/CustomerPages/KYC Individual/kyc_pan&bankDetailsPage.js"
+import { kyc_authorizedPersonDetailsPage } from "../pages/CustomerPages/KYC Individual/kyc_authorizedPersonDetailsPage.js"
 
 export class PageObjectManager {
 
@@ -39,8 +52,20 @@ export class PageObjectManager {
     this.schedule = new ScheduleCallPage(this.page);
     this.inventory = new inventorymanagement(this.page);
     this.uploadConfig = new uploadConfiguration(this.page);
-    this.customDash = new customerShell_DashboardPage(this.page);
+    this.inventroySetUp = new inventorySetupPage(this.page);
+
+    this.customshell_dash = new customerShell_DashboardPage(this.page);
     this.properties = new PropertiesPage(this.page);
+    this.basicdetails = new kyc_personalDetailsPage(this.page);
+    this.manage = new ManageAccountsPage(this.page);
+    this.kycbento =  new kycBentogridsPage(this.page);
+    this.llp = new authorizePerson(this.page);
+    this.llpAddress = new authorizePersonAddress(this.page);
+    this.bank = new bankDetails(this.page);
+    this.companyaddress = new companyAddress(this.page);
+    this.professional = new kyc_professionalDetailsPage(this.page);
+    this.panDetails = new kyc_pan_bankDetailsPage(this.page);
+    this.authorize = new kyc_authorizedPersonDetailsPage(this.page);
 
 }
 
@@ -95,10 +120,43 @@ export class PageObjectManager {
     getUploadConfig(){
         return this.uploadConfig;
     }
-    getCustomerDashboard(){
-        return this.customDash;
+    getCustomershell_dash(){
+        return this.customshell_dash;
     }
     getProperties(){
         return this.properties;
+    }
+    getbasicDetails(){
+        return this.basicdetails;
+    }
+    getManageAccounts(){
+        return this.manage;
+    }
+    getkycbento(){
+        return this.kycbento;
+    }
+    getKYCLLP(){
+        return this.llp;
+    }
+    getllpaddress(){
+        return this.llpAddress;
+    }
+    getbankdetails(){
+        return this.bank;
+    }
+    getCompanyAddress(){
+        return this.companyaddress;
+    }
+    getInventroySetup(){
+        return this.inventroySetUp;
+    }
+    getProfessionalDetails(){
+        return this.professional;
+    }
+    getPanDetails(){
+        return this.panDetails;
+    }
+    getAuthorizePerson(){
+        return this.authorize;
     }
 }

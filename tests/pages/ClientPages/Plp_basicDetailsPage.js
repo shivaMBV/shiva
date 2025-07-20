@@ -41,7 +41,7 @@ export class Plp_basicDetailsPage{
 
     async addingProjectLocation(){
         const actual = await this.projectName.getAttribute("value");
-        await expect(actual).toBe(plpData.ProjectDetails.projectName);
+        expect(actual).toBe(plpData.ProjectDetails.projectName);
         await methods.fillData(this.location, (await methods.generateLocation()).city);
     }
 

@@ -13,8 +13,7 @@ export class ScheduleCallPage {
     }
 
     async setInitialTime(){
-        await methods.
-        waitFor_and_Click(this.addTime);
+        await methods.waitFor_and_Click(this.addTime);
         for(let i=0; i<await this.label.count(); i++){
             const time = this.label.nth(i);
             const label = await time.innerText();

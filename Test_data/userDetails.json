@@ -1,12 +1,18 @@
 {
+  "registration_loginType": "email",
   "clientDetails": {
     "env": "dev",
-    "pin": "111111",
-    "company": "striker",
-    "email": "cxapp123+striker@gmail.com"
+    "domain": "striker",
+    "email": "cxapp123+striker@gmail.com",
+    "phone": "",
+    "pin": "222222"
   },
   "customerDetails": {
-    "email": "darryl.orn@example.org"
+    "firstName": "",
+    "lastName": "",
+    "email": "cxapp123+harini@gmail.com",
+    "phone": "",
+    "pin": "999999"
   },
   "toast": {
     "expectedMessages": [

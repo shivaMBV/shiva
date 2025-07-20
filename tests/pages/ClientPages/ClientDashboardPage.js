@@ -1,3 +1,5 @@
+import { methods } from "../../utils/methods";
+
 export class ClientDashboard{
     
     constructor(page){
@@ -12,4 +14,38 @@ export class ClientDashboard{
         this.ln_myProfile = page.getByRole("link", { name : "My Profile"});
         this.btn_addProject = page.locator("[title='Add project']");
     }
+
+    async clickOn_dsashboard(){
+        await methods.waitFor_and_Click(this.ln_dashboard);
+    }
+
+    async clickOn_bookings(){
+        await methods.waitFor_and_Click(this.ln_bookings);
+    }
+
+    async clickOn_addCustomer(){
+        await methods.waitFor_and_Click(this.ln_addCustomer);
+    }
+
+    async clickOn_allCustomer(){
+        await methods.waitFor_and_Click(this.ln_allCustomer);
+    }
+
+    async clickOn_settings(){
+        await methods.waitFor_and_Click(this.ln_settings);
+    }
+
+    async clickOn_callSchedulings(){
+        await methods.waitFor_and_Click(this.ln_callSchedulings);
+    }
+
+    async clickOn_myProfile(){
+        await methods.waitFor_and_Click(this.ln_myProfile);
+    }
+
+    async logout(){
+        await methods.waitFor_and_Click(this.ln_logout);
+    }
+
+    
 }

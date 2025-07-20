@@ -17,7 +17,6 @@ export class Plp_galleryPage{
         for(let i=0; i<svg; i++){
             const upload = await this.svgSelector.nth(i);
             await methods.uploadFile(this.page, upload, this.on._fileInput, "images/image 195522.svg", "image 195522.svg", this.on._select);
-        }
-        
+        }  
     }
 }

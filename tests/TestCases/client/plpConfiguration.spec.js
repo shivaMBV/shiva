@@ -1,5 +1,4 @@
 import { test } from "@playwright/test";
-import data from "../../../Test_data/userDetails.json";
 import { PageObjectManager } from "../../utils/PageObjectManager";
 import { methods } from "../../utils/methods";
 
@@ -17,7 +16,7 @@ test("plp configuration", async ({page})=>{
       const doc = manager.getplpDocument();
       const gallery = manager.getplpGallery();
 
-      await login.loginUser(data.clientDetails.email, data.clientDetails.pin);
+      await login.Client_login();
       await methods.waitFor_and_Click(add.btn_config);
       await bento.bentoGrid_plp();
       await plp.addStrategicLogo();

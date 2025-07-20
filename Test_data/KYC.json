@@ -1,0 +1,41 @@
+{
+    "KYC" : {
+        "individual":{
+            "basicDetails":{
+                "selectRealtion" : ["Daughter","Sibling","Son"],
+                "firstName" : {
+                    "Male" : ["hari", "ram", "krishna"],
+                    "Female" : ["sita", "laxmi", "harshini"]
+                },
+                "middleName" : "",
+                "lastName": ["shetty", "Reddy", "Naidu"],
+                "nationality" : ["Indian"],
+                "dob" : "18/05/1997",
+                "residentialStatus" : ["RI"],
+                "martialStatus" : ["UnMarried", "Married"],
+                "aadharNumber" : "8888 8888 8888",
+                "passportNumber" : "ASDF456G5",
+                "currentAddress": "Indian Oil Flyover, Maruthi Sevanagar, Bengaluru, Karnataka",
+                "overseasAddress" : "American Museum of Natural History, Manhattan, New York, NY, USA"
+            },
+            "professionalDetails" : {
+                "profession" :["MNC"],
+                "designation" : "Software Engineer",
+                "companyName" : "Infosys",
+                "industry" : [ "Manufacturing", "Real Estate", "Financial Services"],
+                "function" : ["Software Development", "Project Management","Finance"],
+                "annualIncome" : ["5-15 lakh", "15-25 lakh", "25-30 lakh", "50 lakh and above"],
+                "proofOfNRI" : ["Valid Visa Copy", "Work Permit"],
+                "companyAddress": "Charminar, Charminar Road, Char Kaman, Ghansi Bazaar, Hyderabad, Telangana, India"
+            },
+            "panANDbankDetails" : {
+                "pan" : "ASDFG4565H",
+                "bankName" : ["HDFC", "SBIN", "ICIC"],
+                "accountNumber" : "00988787877",
+                "RIaccountType" : ["Savings", "Current"],
+                "NRIaccountType" : ["NRE (Non-Resident External account)","NRO (Non-Resident Ordinary account)"]
+
+            }
+        }
+    }
+}

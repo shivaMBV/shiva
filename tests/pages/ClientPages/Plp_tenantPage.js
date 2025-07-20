@@ -12,7 +12,6 @@ export class Plp_tenantPage {
         this.data = page.locator("[id='t_5w7r7DXNCJ75aUGjBTc4x0']");
         this.addSpecification = page.locator("[title='Add specifications']");
         this.fileSelector = page.locator("[id='535nQGIM2WCzJw4OQ6wXuR'] svg");
-
     }
 
     async keypoints(){

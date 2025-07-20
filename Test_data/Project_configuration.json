@@ -4,10 +4,9 @@
     "builderDesc": "builder refers to a person or company whose job is to construct or repair buildings and other structures."
   },
   "ProjectDetails": {
+    "projectName": "oracle 90",
     "projectDescription": "This is the mostly used project in the world",
-    "projectName": "Rameshwaram",
     "projectsType": [
-      "Commercial",
       "Residential"
     ],
     "SelectedProjectType": "Residential"
@@ -51,29 +50,34 @@
       "aboutLocation": "Situated on Hosur Road, this asset boasts outstanding connectivity. Enhanced by major road arteries, the upcoming Bommanahalli metro station, it ensures seamless access to diverse locales within Bengaluru. Hosur Road, also known as National Highway -NH44, is a major road that connects Bengaluru, Karnataka and Hosur Tamil Nadu."
     }
   },
-  "scheduleCallDetails" : {
-      "startTime" : "10:00",  
-      "endTime" : "18:00",
-      "duration" : "30"
+  "uploadDocuments": {
+    "agreements": {
+      "sale": "docs/bank stmt.pdf",
+      "lease": "docs/Driving license.pdf",
+      "ama": "docs/dummy Pan.pdf",
+      "spoa": "docs/pdf.pdf"
     },
-    "inventoryManagement" :{
-      "totalAvailableArea" : "676567",
-      "amountPerSqFt" : "5789",
-      "minimumAmount" : "3000000"
-    },
-    "uploadDocuments" :{
-      "agreements" : [
-        "docs/bank stmt.pdf",
-        "docs/Driving license.pdf",
-        "docs/dummy Pan.pdf",
-        "docs/pdf.pdf"
-      ],
-      "legal" : [
-        "docs/Dummy Aadhar.pdf",
-        "docs/Board.Resolution-pdf.pdf",
-        "docs/passport.pdf",
-        "docs/Signed.pdf.pdf"
-      ]
-    }
-
+    "legal": [
+      "docs/Dummy Aadhar.pdf",
+      "docs/Board.Resolution-pdf.pdf",
+      "docs/passport.pdf",
+      "docs/Signed.pdf.pdf"
+    ]
+  },
+  "contactManager": {
+    "name": "",
+    "emailID": "",
+    "phoneNumber": "",
+    "profilePhoto": ""
+  },
+  "scheduleCallDetails": {
+    "startTime": "10:00",
+    "endTime": "18:00",
+    "duration": "15"
+  },
+  "inventoryManagement": {
+    "totalAvailableArea": "6898",
+    "amountPerSqFt": "7500",
+    "minimumAmount": "3000000"
+  }
 }

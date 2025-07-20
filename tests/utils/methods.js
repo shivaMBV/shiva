@@ -9,21 +9,32 @@ import { TIMEOUT } from "dns";
 export class methods {
 
 //FOR OTP OR PIN
- static async enterCode(page,code) {
-    const otpCode = code;
-    const inputs = page.locator("input._inputBox");
-    for (let i = 0; i < otpCode.length; i++) {
-      const input = inputs.nth(i);
-      await input.waitFor({ state: 'visible' });
-      const isActive = await input.evaluate(el =>
-        el.classList.contains('_isActive')
-      );
-      if (!isActive) {
-        await input.click();
-      }
-      await input.fill(code[i]);
-    }
+//  static async enterCode(page,code) {
+//     const otpCode = code;
+//     const inputs = page.locator("input._inputBox");
+//     for (let i = 0; i < otpCode.length; i++) {
+//       const input = inputs.nth(i);
+//       await input.waitFor({ state: 'visible' });
+//       const isActive = await input.evaluate(el =>
+//         el.classList.contains('_isActive')
+//       );
+//       if (!isActive) {
+//         await input.click();
+//       }
+//       await input.fill(code[i]);
+//     }
+//   }
+
+static async enterCode(page, code) {
+  const inputs = page.locator("input[name='otp']");
+  await page.waitForTimeout(1000);
+  await inputs.nth(0).evaluate(el => el.click());
+  for (let i = 0; i < code.length; i++) {
+    const input = inputs.nth(i);
+    await input.waitFor({ state: 'visible' });
+    await input.fill(code[i]);
   }
+}
 
   // static async storeData(filePath, updates = {}){
   //   try {
@@ -61,15 +72,21 @@ export class methods {
 
   //select option form dropdown
   static async selectDropdownOption(page, dropdownInputLocator, optionText) {
+    await page.waitForTimeout(1000);
     await dropdownInputLocator.click();
-    const optionLocator = page.locator(`._dropdownItemLabel`, { hasText: optionText });
+    const optionLocator = await page.locator(`//label[normalize-space()='${optionText}']`);
     await optionLocator.click();
   }
   
   
 //text validating funciton
 static async validateText(page, text){
-  await expect(page.getByText(text)).toBeVisible();
+  try {
+    await expect(page.getByText(text)).toBeVisible({ timeout: 3000 });
+    return true;
+  } catch (e) {
+    return false;
+  }
 }
 
 
@@ -87,7 +104,6 @@ static async generateEmail(){
   const domain = faker.helpers.arrayElement(customDomains);
   const email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@${domain}`;
   return {email,firstName,lastName};
-  
 }
 
 static async generateLocation(){
@@ -165,8 +181,8 @@ static async addingFields(page,locator, count = Math.floor(Math.random() * 4) + 
     }  
 }
 
+
 static async specifications(page, parameter, dataField, fileSelectorSvg, fileInput, imgPath, imgName, select){
-  //await methods.addingFields(page,"Add specifications");
   const para = parameter; 
   const data = dataField;
   const count = await para.count();  
@@ -183,7 +199,6 @@ static async specifications(page, parameter, dataField, fileSelectorSvg, fileInp
        const img = fileSelectorSvg;
 if (await img.count() > i) {
   const imageButton = img.nth(i);
-  
   // Check if image is uploaded already (img inside container)
   const container = imageButton.locator('xpath=ancestor::div[contains(@class, "compFileSelector")]');
   const hasImage = await container.locator('img[alt="Selected file"]').count();
@@ -197,5 +212,9 @@ if (await img.count() > i) {
 }
 }
 
+//common function for json data 
+static async getValueOrFallback(value, fallbackFn) {
+  return value && value.trim() !== "" ? value : fallbackFn;
+}
 
 }

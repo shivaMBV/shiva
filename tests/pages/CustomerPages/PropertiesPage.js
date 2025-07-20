@@ -10,8 +10,15 @@ export class PropertiesPage{
         this.assetType = page.locator("//div[@id='2Z6djt20rSxhRvz1iZH2SF']/div[2]");
         this.assetArea = page.locator("//div[@id='63ufuo54t6QibHJSBp5nsG']/div[2]");
         this.assetValue = page.locator("//div[@id='6PhaPZ7Sds3jtpdr5Ex7OI']/div[2]");
-        this.btn_viewDetails =  page.locator(`//div[@title='${plplData.ProjectDetails.projectName}']/ancestor::div[@id='6H8un7JWqBkcfjTNN26Wu8']/following-sibling::div/button[1]`);
+        this.btn_viewDetails =  page.locator(`//div[@title='${plpData.ProjectDetails.projectName}']/ancestor::div[@id='6H8un7JWqBkcfjTNN26Wu8']/following-sibling::div/button[1]`);
+        this.startKYCtext = page.locator("[id='7LFBvRXy2iQ20WAjrGB8n8'] div div ~div div h1");
+        this.btn_startKYC = page.locator("[title='Start KYC']");
     }
+
+    async textVerification(){
+        return await methods.validateText(this.page, "Ready to buy your dream property? Complete KYC to book")
+    }
+    
     async PN(){
         const count = await this.projectName.count();
         for (let i = 0; i < count; i++) {
@@ -34,7 +41,7 @@ export class PropertiesPage{
             if (await title.includes(plpData.ProjectDetails.SelectedProjectType)) {
                 await this.page.waitForLoadState("networkidle");
                 await element.click();
-                console.log("project name is : "+title);
+                console.log("project type is : "+title);
                 break;
             }
         }

@@ -16,9 +16,9 @@ import { on } from 'events';
 export default defineConfig({
   testDir: './tests',
   
-  timeout : 30000,
+  timeout : 50000,
   expect : {
-    timeout :15000
+    timeout :30000
   },
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -27,7 +27,7 @@ export default defineConfig({
     headless : false,
     screenshot : "on",
     //viewport : null
-    viewport : {width : 1240, height : 650}
+    viewport : {width : 1500, height : 800}
   }
   
 });

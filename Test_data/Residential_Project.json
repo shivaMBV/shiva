@@ -1,0 +1,47 @@
+{
+    "Residential" : {
+        "inventorySetUp" :{
+            "apartment" : [
+                "Unit type",
+                "RERA carpet area",
+                "Unit configuration",
+                "Common proportionate area",
+                "UDS",
+                "PLC configuration",
+                "Floor number",
+                "Super built-up area",
+                "Car parking",
+                "Unit number",
+                "Booking status",
+                "Facing"
+            ],
+            "otherAttributes" :[
+                "Sit out area",
+                "Site area",
+                "Garden area",
+                "Balcony area",
+                "Terrace area",
+                "Plot area",
+                "Varanda area"
+            ],
+        
+        "unitConfig" :{
+           "BHK" : ["1BHK", "2BHK", "3BHK", "4BHK"],
+           "T" : ["1T", "2T", "3T", "4T", "5T"]
+        },
+        "facing" : [
+        "East","West","North","South"
+       ],
+       "PLCconfiguration" : [
+        "PLC east",
+        "PLC lake facing",
+        "PLC corner",
+        "PLC club house facing",
+        "PLC west",
+        "PLC north"
+       ]
+    }
+
+
+}
+}

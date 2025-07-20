@@ -20,62 +20,25 @@ export class Plp_documentPage{
     }
         
     async addMasterPlan() {
-        // await methods.addingFields(this.page,this.btn_addMasterPlan);
-        // await this.page.waitForTimeout(2000);
-        // const count = await this.txt_masterPlan.count();
-        // for(let i=0; i<count; i++){
-        //     const txt =  this.txt_masterPlan.nth(i);
-        //     const img =  this.img_masterPlan.nth(i);
-        //     await this.page.waitForTimeout(1500);
-        // await txt.fill("Master Plan "+i);
-        // await methods.uploadFile(this.page, img , this.on._fileInput, "docs/pdf.pdf", "pdf.pdf", this.on._select);
-         //await this.page.waitForTimeout(1500);
-        
-            await methods.waitFor_and_Click(this.btn_addMasterPlan);
-            await this.txt_masterPlan.fill("Master Plan");
-            await methods.uploadFile(this.page, this.img_masterPlan, this.on._fileInput, "docs/pdf.pdf", "pdf.pdf", this.on._select);
-            await this.page.waitForTimeout(1500);
-        
+        await methods.waitFor_and_Click(this.btn_addMasterPlan);
+        await this.txt_masterPlan.fill("Master Plan");
+        await methods.uploadFile(this.page, this.img_masterPlan, this.on._fileInput, "docs/pdf.pdf", "pdf.pdf", this.on._select);
+        await this.page.waitForTimeout(1500);
     }
 
 
     async addFloorPlan() {
-        // await methods.addingFields(this.page,this.btn_floorPlan);
-        // await this.page.waitForTimeout(2000);
-        // const count = await this.txt_floorPlan.count();
-        // for(let i=0; i<count; i++){
-        //     const txt = this.txt_floorPlan.nth(i);
-        //     const img = this.img_floorPlan.nth(i);
-        //     await this.page.waitForTimeout(1500);
-        //  await txt.fill("Floor Plan "+i);
-        // await methods.uploadFile(this.page, img, this.on._fileInput, "docs/pdf.pdf", "pdf.pdf", this.on._select);
-        // await this.page.waitForTimeout(1500);
-        // }
-        
-            await methods.waitFor_and_Click(this.btn_floorPlan);
-            await this.txt_floorPlan.fill("Floor Plan");
-            await methods.uploadFile(this.page, this.img_floorPlan, this.on._fileInput, "docs/pdf.pdf", "pdf.pdf", this.on._select);
-            await this.page.waitForTimeout(1500);
-        
+        await methods.waitFor_and_Click(this.btn_floorPlan);
+        await this.txt_floorPlan.fill("Floor Plan");
+        await methods.uploadFile(this.page, this.img_floorPlan, this.on._fileInput, "docs/pdf.pdf", "pdf.pdf", this.on._select);
+        await this.page.waitForTimeout(1500);
     }
 
-    async addBrochures() {
-        // await methods.addingFields(this.page,this.btn_Brochures);
-        // await this.page.waitForTimeout(2000);
-        // const count = await this.txt_Brochures.count();
-        // for(let i=0; i<count; i++){
-        //     const txt = this.txt_Brochures.nth(i);
-        //     const img = this.img_Brochures.nth(i);
-        //     await this.page.waitForTimeout(1500);
-        // await txt.fill("Brouchers Plan "+i);
-        // await methods.uploadFile(this.page, img, this.on._fileInput, "docs/pdf.pdf", "pdf.pdf", this.on._select);
-        // await this.page.waitForTimeout(1500);
-
-        
-            await methods.waitFor_and_Click(this.btn_Brochures);
-            await this.txt_Brochures.fill("Brochure Plan");
-            await methods.uploadFile(this.page, this.img_Brochures, this.on._fileInput, "docs/pdf.pdf", "pdf.pdf", this.on._select);
-            await this.page.waitForTimeout(1500);
+    async addBrochures() {  
+        await methods.waitFor_and_Click(this.btn_Brochures);
+        await this.txt_Brochures.fill("Brochure Plan");
+        await methods.uploadFile(this.page, this.img_Brochures, this.on._fileInput, "docs/pdf.pdf", "pdf.pdf", this.on._select);
+        await this.page.waitForTimeout(1500);
     }
 
 }
